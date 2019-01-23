@@ -27,3 +27,29 @@ server, only the maven wrapper is needed.
 
 If I can automate it, I automate it. Simple, isn't it?
 
+## 2. Implements and solve tests
+
+Now I have a project up to date. I begin by fixing known bugs. Here, the failing
+tests.
+
+As I only looking for the real test code for the first time, I can know see that
+they are only sample requirements without implementation.
+
+I step back to a real step: no implementation at all by commenting samples. In a
+real project, such code will not exist and therefore will not be commented out.
+
+### For the technical test
+
+I will create sub-branches that I will squash in a real project. I want to
+demonstrate I can take the different steps of the TDD (red green refactor) but
+in a real project, only the valid commits will be pushed as to be able to use
+`git bisect` if needed.
+
+### Tests are not exhaustive
+
+Sample tests does not cover all possibilities. And even if the tests are
+implemented, the implementation code can (and therefore do) be bugged.
+
+At least, the travis badge will be green ^^
+
+**Next step**: add issues and implements use cases
