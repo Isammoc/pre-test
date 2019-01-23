@@ -1,4 +1,5 @@
 # Pretest-TDD
+[![Build Status](https://travis-ci.org/Isammoc/pre-test.svg?branch=master)](https://travis-ci.org/Isammoc/pre-test)
 
 This project is an answer to a technical test from priceminister.
 
@@ -40,6 +41,6 @@ _TBD_
 ### Tools
 
  * [Github](https://github.com/Isammoc/pre-test)
- * Travis _TBD_
+ * [Travis](https://travis-ci.org/Isammoc/pre-test)
  * Github Pages _TBD_
  * _TBD_
