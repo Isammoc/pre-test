@@ -25,8 +25,8 @@ public class CustomerAccount implements Account {
 		if(withdrawnAmount > this.balance) {
 			throw new IllegalBalanceException(INITIAL_BALANCE);
 		}
-		
-		return this.balance - withdrawnAmount;
+		this.balance -= withdrawnAmount;
+		return this.balance;
 	}
 
 }
