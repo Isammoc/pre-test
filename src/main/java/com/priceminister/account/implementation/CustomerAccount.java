@@ -23,7 +23,7 @@ public class CustomerAccount implements Account {
 
 	public Double withdrawAndReportBalance(Double withdrawnAmount, AccountRule rule) throws IllegalBalanceException {
 		if (!rule.withdrawPermitted(INITIAL_BALANCE)) {
-			throw new IllegalBalanceException(-withdrawnAmount);
+			throw new IllegalBalanceException(this.balance - withdrawnAmount);
 		}
 		this.balance -= withdrawnAmount;
 		return this.balance;
