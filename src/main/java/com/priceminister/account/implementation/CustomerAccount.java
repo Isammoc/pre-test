@@ -11,7 +11,7 @@ public class CustomerAccount implements Account {
 	private Double balance = INITIAL_BALANCE;
 
 	public void add(Double addedAmount) {
-		this.balance = addedAmount;
+		this.balance += addedAmount;
 	}
 
 	public Double getBalance() {

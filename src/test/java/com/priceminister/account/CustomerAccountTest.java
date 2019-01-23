@@ -60,6 +60,20 @@ public class CustomerAccountTest {
 		assertEquals(givenAmount, customerAccount.getBalance(), EPSILON);
 	}
 
+	@Test
+	public void testAddMultiplePositiveAmounts() {
+		// given see SetUp
+		double firstAmount = 123.45;
+		double secondAmount = 234.56;
+
+		// when
+		customerAccount.add(firstAmount);
+		customerAccount.add(secondAmount);
+
+		// then
+		assertEquals(firstAmount + secondAmount, customerAccount.getBalance(), EPSILON);
+	}
+
 	/**
 	 * Tests that an illegal withdrawal throws the expected exception. Use the logic
 	 * contained in CustomerAccountRule; feel free to refactor the existing code.
@@ -75,7 +89,5 @@ public class CustomerAccountTest {
 
 		// then see expected
 	}
-
-//	// Also implement missing unit tests for the above functionalities.
 
 }
