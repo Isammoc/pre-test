@@ -44,15 +44,22 @@ public class CustomerAccountTest {
 		// then
 		assertEquals(0.0, actual, EPSILON);
 	}
-//
-//	/**
-//	 * Adds money to the account and checks that the new balance is as expected.
-//	 */
-//	@Test
-//	public void testAddPositiveAmount() {
-//		fail("not yet implemented");
-//	}
-//
+
+	/**
+	 * Adds money to the account and checks that the new balance is as expected.
+	 */
+	@Test
+	public void testAddPositiveAmount() {
+		// given see setUp
+		double givenAmount = 123.45;
+
+		// when
+		customerAccount.add(givenAmount);
+
+		// then
+		assertEquals(givenAmount, customerAccount.getBalance(), EPSILON);
+	}
+
 //	/**
 //	 * Tests that an illegal withdrawal throws the expected exception. Use the logic
 //	 * contained in CustomerAccountRule; feel free to refactor the existing code.
