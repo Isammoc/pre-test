@@ -60,15 +60,22 @@ public class CustomerAccountTest {
 		assertEquals(givenAmount, customerAccount.getBalance(), EPSILON);
 	}
 
-//	/**
-//	 * Tests that an illegal withdrawal throws the expected exception. Use the logic
-//	 * contained in CustomerAccountRule; feel free to refactor the existing code.
-//	 */
-//	@Test
-//	public void testWithdrawAndReportBalanceIllegalBalance() {
-//		fail("not yet implemented");
-//	}
-//
+	/**
+	 * Tests that an illegal withdrawal throws the expected exception. Use the logic
+	 * contained in CustomerAccountRule; feel free to refactor the existing code.
+	 */
+	@Test(expected = IllegalBalanceException.class)
+	public void testWithdrawAndReportBalanceIllegalBalance() throws Exception {
+		// given see setUp
+		double givenAmount = 123.45;
+		customerAccount.add(givenAmount);
+
+		// when
+		customerAccount.withdrawAndReportBalance(456.78, rule);
+
+		// then see expected
+	}
+
 //	// Also implement missing unit tests for the above functionalities.
 
 }
