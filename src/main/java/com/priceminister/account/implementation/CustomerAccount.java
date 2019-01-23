@@ -11,8 +11,7 @@ public class CustomerAccount implements Account {
 	}
 
 	public Double getBalance() {
-		// TODO Auto-generated method stub
-		return null;
+		return 0.0;
 	}
 
 	public Double withdrawAndReportBalance(Double withdrawnAmount, AccountRule rule) throws IllegalBalanceException {
