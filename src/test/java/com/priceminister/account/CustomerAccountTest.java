@@ -21,42 +21,39 @@ import com.priceminister.account.implementation.CustomerAccount;
  */
 public class CustomerAccountTest {
 
-	Account customerAccount;
-	AccountRule rule;
+	private Account customerAccount;
+	private AccountRule rule;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 		customerAccount = new CustomerAccount();
 	}
 
-	/**
-	 * Tests that an empty account always has a balance of 0.0, not a NULL.
-	 */
-	@Test
-	public void testAccountWithoutMoneyHasZeroBalance() {
-		fail("not yet implemented");
-	}
-
-	/**
-	 * Adds money to the account and checks that the new balance is as expected.
-	 */
-	@Test
-	public void testAddPositiveAmount() {
-		fail("not yet implemented");
-	}
-
-	/**
-	 * Tests that an illegal withdrawal throws the expected exception. Use the logic
-	 * contained in CustomerAccountRule; feel free to refactor the existing code.
-	 */
-	@Test
-	public void testWithdrawAndReportBalanceIllegalBalance() {
-		fail("not yet implemented");
-	}
-
-	// Also implement missing unit tests for the above functionalities.
+//	/**
+//	 * Tests that an empty account always has a balance of 0.0, not a NULL.
+//	 */
+//	@Test
+//	public void testAccountWithoutMoneyHasZeroBalance() {
+//		fail("not yet implemented");
+//	}
+//
+//	/**
+//	 * Adds money to the account and checks that the new balance is as expected.
+//	 */
+//	@Test
+//	public void testAddPositiveAmount() {
+//		fail("not yet implemented");
+//	}
+//
+//	/**
+//	 * Tests that an illegal withdrawal throws the expected exception. Use the logic
+//	 * contained in CustomerAccountRule; feel free to refactor the existing code.
+//	 */
+//	@Test
+//	public void testWithdrawAndReportBalanceIllegalBalance() {
+//		fail("not yet implemented");
+//	}
+//
+//	// Also implement missing unit tests for the above functionalities.
 
 }

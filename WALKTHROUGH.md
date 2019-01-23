@@ -31,3 +31,9 @@ If I can automate it, I automate it. Simple, isn't it?
 
 Now I have a project up to date. I begin by fixing known bugs. Here, the failing
 tests.
+
+As I only looking for the real test code for the first time, I can know see that
+they are only sample requirements without implementation.
+
+I step back to a real step: no implementation at all by commenting samples. In a
+real project, such code will not exist and therefore will not be commented out.
