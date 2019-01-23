@@ -19,7 +19,7 @@ public class CustomerAccount implements Account {
 	}
 
 	public Double withdrawAndReportBalance(Double withdrawnAmount, AccountRule rule) throws IllegalBalanceException {
-		throw new IllegalBalanceException(0.0);
+		throw new IllegalBalanceException(INITIAL_BALANCE);
 	}
 
 }
