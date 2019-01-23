@@ -1,11 +1,18 @@
 package com.priceminister.account;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.priceminister.account.implementation.CustomerAccount;
+import com.priceminister.account.implementation.CustomerAccountRule;
 
 /**
  * Please create the business code, starting from the unit tests below.
@@ -19,11 +26,14 @@ import com.priceminister.account.implementation.CustomerAccount;
  * it to recrutement-dev@priceminister.com
  * 
  */
+@RunWith(MockitoJUnitRunner.class)
 public class CustomerAccountTest {
 
 	private static final double EPSILON = 0.0001;
 
 	private Account customerAccount;
+
+	@Mock
 	private AccountRule rule;
 
 	@Before
@@ -111,4 +121,59 @@ public class CustomerAccountTest {
 		// then see expected
 	}
 
+	@Test
+	public void testWithdrawNominal() throws Exception {
+		// given see setUp
+		double givenAmount = 123.45;
+		customerAccount.add(givenAmount);
+		rule = new CustomerAccountRule();
+
+		// when
+		Double result = customerAccount.withdrawAndReportBalance(23.45, rule);
+
+		// then
+		assertEquals(100.00, result, EPSILON);
+		assertEquals(100.00, customerAccount.getBalance(), EPSILON);
+	}
+
+	@Test
+	public void testWithdrawFollowRuleDenying() throws Exception {
+		// given see setUp
+		when(rule.withdrawPermitted(any(Double.class))).thenReturn(false);
+
+		// when
+		try {
+			customerAccount.withdrawAndReportBalance(12.45, rule);
+		} catch (IllegalBalanceException expected) {
+			// then
+			assertEquals(-12.45, expected.getIllegalBalance(), EPSILON);
+		}
+	}
+
+	@Test
+	public void testWithdrawFollowRuleAccepting() throws Exception {
+		// given see setUp
+		when(rule.withdrawPermitted(any(Double.class))).thenReturn(true);
+
+		// when
+		customerAccount.withdrawAndReportBalance(12.45, rule);
+
+		// then
+		assertEquals(-12.45, customerAccount.getBalance(), EPSILON);
+	}
+
+	@Test
+	public void testWithdrawFollowRuleDenyingWithPreviousBalance() throws Exception {
+		// given see setUp
+		customerAccount.add(123.45);
+		when(rule.withdrawPermitted(eq(111.0))).thenReturn(false);
+
+		// when
+		try {
+			customerAccount.withdrawAndReportBalance(12.45, rule);
+		} catch (IllegalBalanceException expected) {
+			// then
+			assertEquals(111.00, expected.getIllegalBalance(), EPSILON);
+		}
+	}
 }
