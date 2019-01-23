@@ -110,5 +110,18 @@ public class CustomerAccountTest {
 
 		// then see expected
 	}
+	
+	@Test
+	public void testWithdrawNominal() throws Exception {
+		// given see setUp
+		double givenAmount = 123.45;
+		customerAccount.add(givenAmount);
+		
+		// when
+		Double result = customerAccount.withdrawAndReportBalance(23.45, rule);
+		
+		// then
+		assertEquals(100.00, result, EPSILON);
+	}
 
 }
