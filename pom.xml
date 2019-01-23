@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.priceminister</groupId>
   <artifactId>pretest-tdd</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
 
   <description>
     Please start by implementing the unit tests and the underlying application code:
