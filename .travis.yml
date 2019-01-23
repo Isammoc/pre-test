@@ -1,1 +1,14 @@
 language: java
+sudo: false
+install: true
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
+env:
+  secure: "mkkmtCmzqzIr62ME++QYOdxkD0zmYLgvJrp73ozVnjHJVyqYZFehmeH164jBe/zRtrfrimrtLHhsPrHVp/6SaOPIka+ENlaUyp/2IJOnXshUz0bKnZE+NXTKhdmpQJ2DCeRt9gBRd1AGyAdzxdMwKrbBjQqqdSJAZ19Vkgkz9XfO4prlrMtEPBf+ZPWN32AR9JSIOnAJOBoClQBpmuBK09T5HxuN9m67/8PbTzrLdgMkdeAGSM0qpMLUNdyAHo1O16CdzyrPrX2GgprjmbKzpyEb5OsUr/XCZOM42MpEsMMsWMl9nCkGa2r8E5pFy4+unsZ0Fju+NR9hIxCXZ6juSorIWEUFC6rcrCcpWfTIabwBxcs6OCjdCuPQYSK8OYQkFng6XPZ9AByD8ry1rhyUIVsqWlFN3Ga6431uIE/ahYXHoX9f1wUiZmrmLBrhWUeWgU6RXfPjRJZbv7lEc/MEpzG8JL3t4yVfPHMpWFcade0v0I/YUIUqy68gV268eGwS8ISankXrvHOuxnb+TYvTc7SINIUSCVJp0T+2v4OyMTdd3P+wr3TNduKFWdlWBJBBmiGyT6YmAlUfkWwyLp6DxFciAF9eGhbZz+W1+UtZcSZSlblwLXr2ExINPW+t4g8vhfBiQC/lWdWy7uO8U5U7u723UswptFK2dVKvz1fI7GM="
+
+script:
+  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.projectKey=Isammoc_pre-test -Dsonar.organization=isammoc-github -Dsonar.host.url='https://sonarcloud.io' -Dsonar.login=$SONAR_TOKEN

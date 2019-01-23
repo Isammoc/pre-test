@@ -53,3 +53,8 @@ implemented, the implementation code can (and therefore do) be bugged.
 At least, the travis badge will be green ^^
 
 **Next step**: add issues and implements use cases
+
+## 3. Sonarqube
+
+For fun, I want to test sonarcloud.io . I often use a private instance of
+sonarqube but never the public one. That is the opportunity!

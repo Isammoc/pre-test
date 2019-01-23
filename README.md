@@ -1,5 +1,6 @@
 # Pretest-TDD
 [![Build Status](https://travis-ci.org/Isammoc/pre-test.svg?branch=master)](https://travis-ci.org/Isammoc/pre-test)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Isammoc_pre-test&metric=alert_status)](https://sonarcloud.io/dashboard?id=Isammoc_pre-test)
 
 This project is an answer to a technical test from priceminister.
 
@@ -39,3 +40,4 @@ In a real team, we will discuss about the formatter style.
 
  * [Github](https://github.com/Isammoc/pre-test)
  * [Travis](https://travis-ci.org/Isammoc/pre-test)
+ * [SonarCloud](https://sonarcloud.io/dashboard?id=Isammoc_pre-test)
