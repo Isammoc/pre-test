@@ -11,7 +11,10 @@ public class CustomerAccount implements Account {
 	private Double balance = INITIAL_BALANCE;
 
 	public void add(Double addedAmount) {
-		this.balance = addedAmount;
+		if (addedAmount < 0) {
+			throw new IllegalArgumentException("Cannot add negative amount (got '" + addedAmount + "')");
+		}
+		this.balance += addedAmount;
 	}
 
 	public Double getBalance() {

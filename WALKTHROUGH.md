@@ -58,3 +58,13 @@ At least, the travis badge will be green ^^
 
 For fun, I want to test sonarcloud.io . I often use a private instance of
 sonarqube but never the public one. That is the opportunity!
+
+I don't understand why I can't make the sonarcloud addons working. But I have to
+work on other subjects. So I will use plain maven command for now.
+
+In the same time, I modify the code smells detected by Sonarqube.
+
+## 4. Adding enough tests
+
+Continuing following TDD, I will add enough tests to have a suitable test
+harness to cover the basics.

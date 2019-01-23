@@ -60,6 +60,41 @@ public class CustomerAccountTest {
 		assertEquals(givenAmount, customerAccount.getBalance(), EPSILON);
 	}
 
+	@Test
+	public void testAddMultiplePositiveAmounts() {
+		// given see SetUp
+		double firstAmount = 123.45;
+		double secondAmount = 234.56;
+
+		// when
+		customerAccount.add(firstAmount);
+		customerAccount.add(secondAmount);
+
+		// then
+		assertEquals(firstAmount + secondAmount, customerAccount.getBalance(), EPSILON);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void testAddNullAmount() {
+		// given see setUp
+
+		// when
+		customerAccount.add(null);
+
+		// then see expected
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testAddNegativeAmount() {
+		// given see setUp
+		double negativeAmount = -123.45;
+
+		// when
+		customerAccount.add(negativeAmount);
+
+		// then see expected
+	}
+
 	/**
 	 * Tests that an illegal withdrawal throws the expected exception. Use the logic
 	 * contained in CustomerAccountRule; feel free to refactor the existing code.
@@ -75,7 +110,5 @@ public class CustomerAccountTest {
 
 		// then see expected
 	}
-
-//	// Also implement missing unit tests for the above functionalities.
 
 }
