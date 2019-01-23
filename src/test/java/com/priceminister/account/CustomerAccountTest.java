@@ -2,6 +2,8 @@ package com.priceminister.account;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
@@ -165,7 +167,7 @@ public class CustomerAccountTest {
 	public void testWithdrawFollowRuleDenyingWithPreviousBalance() throws Exception {
 		// given see setUp
 		customerAccount.add(123.45);
-		when(rule.withdrawPermitted(any(Double.class))).thenReturn(false);
+		when(rule.withdrawPermitted(eq(111.0))).thenReturn(false);
 
 		// when
 		try {
