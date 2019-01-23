@@ -37,3 +37,10 @@ they are only sample requirements without implementation.
 
 I step back to a real step: no implementation at all by commenting samples. In a
 real project, such code will not exist and therefore will not be commented out.
+
+### For the technical test
+
+I will create sub-branches that I will squash in a real project. I want to
+demonstrate I can take the different steps of the TDD (red green refactor) but
+in a real project, only the valid commits will be pushed as to be able to use
+`git bisect` if needed.

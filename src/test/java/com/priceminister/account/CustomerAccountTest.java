@@ -1,6 +1,6 @@
 package com.priceminister.account;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +21,8 @@ import com.priceminister.account.implementation.CustomerAccount;
  */
 public class CustomerAccountTest {
 
+	private static final double EPSILON = 0.0001;
+
 	private Account customerAccount;
 	private AccountRule rule;
 
@@ -29,13 +31,19 @@ public class CustomerAccountTest {
 		customerAccount = new CustomerAccount();
 	}
 
-//	/**
-//	 * Tests that an empty account always has a balance of 0.0, not a NULL.
-//	 */
-//	@Test
-//	public void testAccountWithoutMoneyHasZeroBalance() {
-//		fail("not yet implemented");
-//	}
+	/**
+	 * Tests that an empty account always has a balance of 0.0, not a NULL.
+	 */
+	@Test
+	public void testAccountWithoutMoneyHasZeroBalance() {
+		// given see setUp
+
+		// when
+		Double actual = customerAccount.getBalance();
+
+		// then
+		assertEquals(0.0, actual, EPSILON);
+	}
 //
 //	/**
 //	 * Adds money to the account and checks that the new balance is as expected.
