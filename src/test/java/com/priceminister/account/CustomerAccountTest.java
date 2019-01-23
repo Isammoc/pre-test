@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import com.priceminister.account.implementation.CustomerAccount;
+import com.priceminister.account.implementation.CustomerAccountRule;
 
 /**
  * Please create the business code, starting from the unit tests below.
@@ -124,6 +125,7 @@ public class CustomerAccountTest {
 		// given see setUp
 		double givenAmount = 123.45;
 		customerAccount.add(givenAmount);
+		rule = new CustomerAccountRule();
 
 		// when
 		Double result = customerAccount.withdrawAndReportBalance(23.45, rule);
