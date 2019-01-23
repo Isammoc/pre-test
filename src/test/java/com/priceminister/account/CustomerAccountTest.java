@@ -146,4 +146,17 @@ public class CustomerAccountTest {
 			assertEquals(-12.45, expected.getIllegalBalance(), EPSILON);
 		}
 	}
+
+	@Test
+	public void testWithdrawFollowRuleAccepting() throws Exception {
+		// given see setUp
+		when(rule.withdrawPermitted(any(Double.class))).thenReturn(true);
+
+		// when
+		customerAccount.withdrawAndReportBalance(12.45, rule);
+
+		// then
+		assertEquals(-12.45, customerAccount.getBalance(), EPSILON);
+	}
+
 }
