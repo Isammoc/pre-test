@@ -87,9 +87,10 @@ public class CustomerAccountTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testAddNegativeAmount() {
 		// given see setUp
+		double negativeAmount = -123.45;
 
 		// when
-		customerAccount.add(-123.45);
+		customerAccount.add(negativeAmount);
 
 		// then see expected
 	}
