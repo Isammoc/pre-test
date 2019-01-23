@@ -7,29 +7,21 @@ Please see [original project](https://github.com/recrutement-pm/pre-test).
 
 ## Main features
 
-_TBD_
-
-## Technical stack
-
-_TBD_
+ * Manage an user account balance.
 
 ## Quickstart
-
- * JDK
-
-## Prerequisite
-
-_TBD_
-
-## Installation steps
-
-Not suitable for installation.
-
-## First launch
 
 ```bash
 ./mvnw test
 ```
+
+## Prerequisite
+
+ * JDK 8+
+
+## Installation steps
+
+Not suitable for installation.
 
 ## Tips and tricks
 
@@ -47,5 +39,3 @@ In a real team, we will discuss about the formatter style.
 
  * [Github](https://github.com/Isammoc/pre-test)
  * [Travis](https://travis-ci.org/Isammoc/pre-test)
- * Github Pages _TBD_
- * _TBD_

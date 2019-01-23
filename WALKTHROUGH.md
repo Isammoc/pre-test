@@ -44,3 +44,12 @@ I will create sub-branches that I will squash in a real project. I want to
 demonstrate I can take the different steps of the TDD (red green refactor) but
 in a real project, only the valid commits will be pushed as to be able to use
 `git bisect` if needed.
+
+### Tests are not exhaustive
+
+Sample tests does not cover all possibilities. And even if the tests are
+implemented, the implementation code can (and therefore do) be bugged.
+
+At least, the travis badge will be green ^^
+
+**Next step**: add issues and implements use cases
