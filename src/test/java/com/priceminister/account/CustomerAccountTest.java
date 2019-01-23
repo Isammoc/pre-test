@@ -122,6 +122,7 @@ public class CustomerAccountTest {
 		
 		// then
 		assertEquals(100.00, result, EPSILON);
+		assertEquals(100.00, customerAccount.getBalance(), EPSILON);
 	}
 
 }
