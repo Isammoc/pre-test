@@ -125,4 +125,8 @@ public class CustomerAccountTest {
 		assertEquals(100.00, customerAccount.getBalance(), EPSILON);
 	}
 
+	@Test
+	public void testWithdrawFollowRule() throws Exception {
+		
+	}
 }
