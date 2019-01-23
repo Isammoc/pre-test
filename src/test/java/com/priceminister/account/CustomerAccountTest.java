@@ -1,9 +1,14 @@
 package com.priceminister.account;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.priceminister.account.implementation.CustomerAccount;
 
@@ -19,11 +24,14 @@ import com.priceminister.account.implementation.CustomerAccount;
  * it to recrutement-dev@priceminister.com
  * 
  */
+@RunWith(MockitoJUnitRunner.class)
 public class CustomerAccountTest {
 
 	private static final double EPSILON = 0.0001;
 
 	private Account customerAccount;
+
+	@Mock
 	private AccountRule rule;
 
 	@Before
@@ -110,23 +118,32 @@ public class CustomerAccountTest {
 
 		// then see expected
 	}
-	
+
 	@Test
 	public void testWithdrawNominal() throws Exception {
 		// given see setUp
 		double givenAmount = 123.45;
 		customerAccount.add(givenAmount);
-		
+
 		// when
 		Double result = customerAccount.withdrawAndReportBalance(23.45, rule);
-		
+
 		// then
 		assertEquals(100.00, result, EPSILON);
 		assertEquals(100.00, customerAccount.getBalance(), EPSILON);
 	}
 
 	@Test
-	public void testWithdrawFollowRule() throws Exception {
-		
+	public void testWithdrawFollowRuleDenying() throws Exception {
+		// given see setUp
+		when(rule.withdrawPermitted(any(Double.class))).thenReturn(false);
+
+		// when
+		try {
+			customerAccount.withdrawAndReportBalance(12.45, rule);
+		} catch (IllegalBalanceException expected) {
+			// then
+			assertEquals(-12.45, expected.getIllegalBalance(), EPSILON);
+		}
 	}
 }
