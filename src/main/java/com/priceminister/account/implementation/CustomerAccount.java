@@ -8,12 +8,14 @@ public class CustomerAccount implements Account {
 
 	private static final double INITIAL_BALANCE = 0.0;
 
+	private Double balance = INITIAL_BALANCE;
+
 	public void add(Double addedAmount) {
-		// TODO Auto-generated method stub
+		this.balance = addedAmount;
 	}
 
 	public Double getBalance() {
-		return INITIAL_BALANCE;
+		return this.balance;
 	}
 
 	public Double withdrawAndReportBalance(Double withdrawnAmount, AccountRule rule) throws IllegalBalanceException {
