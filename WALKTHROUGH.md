@@ -68,3 +68,20 @@ In the same time, I modify the code smells detected by Sonarqube.
 
 Continuing following TDD, I will add enough tests to have a suitable test
 harness to cover the basics.
+
+I think I will have a 100% test coverage. But it seems wrong to test as we know
+what happens inside. I think this feelings happens because I was too deep in the
+exercise.
+
+## And after
+
+I don't know enough about the subject, the constraints, etc. to know where all
+of this will aim.
+
+My first though will be to remove the overkill complexity about the AccountRule
+if no other rule is wanted. Replace usage of `Double` object by `double`
+value.
+
+I will not implement synchronized account or other threading model (actor,
+channels, etc.), as in a real system, the different accounts will be in DB. And
+other mechanisms exists to prevent multi access.
