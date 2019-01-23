@@ -27,9 +27,14 @@ Not suitable for installation.
 
 ## First launch
 
-_TBD_
+```bash
+./mvnw test
+```
 
 ## Tips and tricks
+
+To not think about it, I simply use the default built-in formatter in eclipse.
+In a real team, we will discuss about the formatter style.
 
 ## References
 
