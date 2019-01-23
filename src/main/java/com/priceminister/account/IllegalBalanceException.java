@@ -7,11 +7,11 @@ public class IllegalBalanceException extends Exception {
 	private final Double balance;
 
 	public IllegalBalanceException(Double illegalBalance) {
+		super("Illegal account balance: " + illegalBalance);
 		balance = illegalBalance;
 	}
 
-	@Override
-	public String toString() {
-		return "Illegal account balance: " + balance;
+	public Double getIllegalBalance() {
+		return balance;
 	}
 }
