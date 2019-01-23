@@ -6,12 +6,14 @@ import com.priceminister.account.IllegalBalanceException;
 
 public class CustomerAccount implements Account {
 
+	private static final double INITIAL_BALANCE = 0.0;
+
 	public void add(Double addedAmount) {
 		// TODO Auto-generated method stub
 	}
 
 	public Double getBalance() {
-		return 0.0;
+		return INITIAL_BALANCE;
 	}
 
 	public Double withdrawAndReportBalance(Double withdrawnAmount, AccountRule rule) throws IllegalBalanceException {
